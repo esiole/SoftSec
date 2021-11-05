@@ -1,8 +1,12 @@
+const RESULT_CODE_ELEMENT = document.getElementById("resultCode");
+
+
 document.getElementById("submit-btn").addEventListener("click", onSubmitCode);
+document.getElementById("copy-btn").addEventListener("click", onCopyButtonClick);
 document.getElementById("code").addEventListener("input", onInputCode);
-document.getElementById("resultCode").addEventListener("input", onInputCode);
+RESULT_CODE_ELEMENT.addEventListener("input", onInputCode);
 document.getElementById("code").dispatchEvent(new Event("input"));
-document.getElementById("resultCode").dispatchEvent(new Event("input"));
+RESULT_CODE_ELEMENT.dispatchEvent(new Event("input"));
 document.getElementById("code").focus();
 
 function onSubmitCode(event) {
@@ -28,4 +32,14 @@ function onInputCode(event) {
     } else {
         event.target.classList.remove("code-input");
     }
+}
+
+function onCopyButtonClick(event) {
+    const oldFocus = document.activeElement;
+    RESULT_CODE_ELEMENT.select();
+    document.execCommand("copy");
+    oldFocus.focus();
+    const oldButtonValue = event.target.innerHTML;
+    event.target.innerHTML = "Скопировано!";
+    setTimeout(() => event.target.innerHTML = oldButtonValue, 2500);
 }
