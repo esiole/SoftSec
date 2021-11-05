@@ -5,26 +5,29 @@ const fs = require('fs');
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("index");
+    let template = fs.readFileSync('./views/index.pug', 'utf8');
+    template = template.replace(/=code/g, "");
+    template = template.replace(/=resultCode/g, "");
+    let html = pug.render(template);
+    res.set('Content-Type', 'text/html');
+    res.send(html);
 });
 
 router.post("/comments/clear/", (req, res) => {
     const {
-        code
+        code,
+        lang
     } = req.body;
 
     let template = fs.readFileSync('./views/index.pug', 'utf8');
     if (typeof code != 'undefined'){
+        template = template.replace(/=code/g, code);
         template = template.replace(/=resultCode/g, code);
     }
 
-    let html = pug.render(template);
+    let html = pug.render(template, {lang: lang});
     res.set('Content-Type', 'text/html');
     res.send(html);
-
-    //const input = "#{root.process.mainModule.require('child_process').execSync('ls')}";
-    //const output = pug.compile(`p ${code}`)();
-    //res.render("index", {resultCode: output});
 });
 
 module.exports = router;
