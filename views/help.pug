@@ -1,0 +1,29 @@
+html.h-100
+    head
+        meta(charset="utf-8")
+        link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css", integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC", crossorigin="anonymous")
+        title ClearComments
+    body.d-flex.flex-column.h-100
+        header.mb-5.pb-3
+            nav.navbar.navbar-dark.bg-dark.navbar-expand.border-bottom.fixed-top
+                div.container-fluid
+                    a.navbar-brand(href="/") ClearComments
+                    ul.navbar-nav.flex-grow-1
+                        li.nav-item
+                            a.nav-link(href="/help") Документация
+        main.flex-shrink-0.mb-3
+            div.container-fluid
+                div.w-75.mx-auto
+                    h4 Шаг 1: Скопируйте исходный код в поле слева.
+                    p Пример:
+                    code int x = 100;
+                    h4 Шаг 2: Нажмите кнопку "Очистить код", чтобы начать обработку.
+                    p Нажмите кнопку "Очистить код", которая находится под полями ввода по середине и подождите несколько секунд.
+                    h4 Шаг 3: Скопируйте код без комментариев из правого поля.
+                    p Это ответ на запрос, который мы сделали ранее в шаге №1:
+                    code int x = 100;
+                    h4 Шаг 4: Вставьте код в свою любимую IDE и используйте его!
+
+        footer.footer.mt-auto.py-3.bg-light
+            div.container.text-center &copy; 2021 - Есиков Олег
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM", crossorigin="anonymous")

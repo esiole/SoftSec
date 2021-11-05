@@ -13,6 +13,10 @@ router.get("/", (req, res) => {
     res.send(html);
 });
 
+router.get("/help", (req, res) => {
+    res.render("help");
+});
+
 router.post("/comments/clear/", (req, res) => {
     const {
         code,

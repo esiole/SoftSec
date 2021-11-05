@@ -1,16 +1,18 @@
+const CODE_ELEMENT = document.getElementById("code");
 const RESULT_CODE_ELEMENT = document.getElementById("resultCode");
+const SUBMIT_BUTTON = document.getElementById("submit-btn");
+const COPY_BUTTON = document.getElementById("copy-btn")
 
-
-document.getElementById("submit-btn").addEventListener("click", onSubmitCode);
-document.getElementById("copy-btn").addEventListener("click", onCopyButtonClick);
-document.getElementById("code").addEventListener("input", onInputCode);
+SUBMIT_BUTTON.addEventListener("click", onSubmitCode);
+COPY_BUTTON.addEventListener("click", onCopyButtonClick);
+CODE_ELEMENT.addEventListener("input", onInputCode);
 RESULT_CODE_ELEMENT.addEventListener("input", onInputCode);
-document.getElementById("code").dispatchEvent(new Event("input"));
+CODE_ELEMENT.dispatchEvent(new Event("input"));
 RESULT_CODE_ELEMENT.dispatchEvent(new Event("input"));
-document.getElementById("code").focus();
+CODE_ELEMENT.focus();
 
 function onSubmitCode(event) {
-    const code = document.getElementById("code").value;
+    const code = CODE_ELEMENT.value;
     const lang = document.getElementById("lang").value;
     let form = document.createElement('form');
     form.action = '/comments/clear';
