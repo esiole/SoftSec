@@ -19,9 +19,9 @@ html.h-100
                     div.w-75.bg-light.border.border-secondary.border-2.rounded
                         div.d-flex.flex-row
                             div.flex-fill.my-3.ms-3.me-4
-                                textarea#code.w-100.code-input.border.border-dark(rows="20", wrap="off") =code
+                                textarea#code.w-100.code-input.no-resizable.border.border-dark(rows="20", wrap="off") =code
                             div.flex-fill.my-3.me-3
-                                textarea.w-100.code-input(rows="20", wrap="off", readonly) =resultCode
+                                textarea#resultCode.w-100.code-input.no-resizable(rows="20", wrap="off", readonly) =resultCode
                         div.d-flex.flex-row.justify-content-between.border-top.border-3
                             div.my-3.ms-3(style="width: 250px;")
                                 select#lang.w-100.form-select.form-select-lg.p-2
