@@ -1,8 +1,8 @@
 const express = require('express');
 const pug = require('pug');
 const fs = require('fs');
-const utils = require('./utils.js');
-const data = require('./data.json');
+const utils = require('./src/utils.js');
+const data = require('./data/data.json');
 
 const router = express.Router();
 
