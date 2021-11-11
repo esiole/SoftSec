@@ -18,8 +18,8 @@ block content
             div.d-flex.flex-row.justify-content-between.border-top.border-3
                 div.my-3.ms-3(style="width: 250px;")
                     select#lang.w-100.form-select.form-select-lg.p-2
-                        option(value="JS", selected=lang === "JS") JavaScript
-                        option(value="Python" selected=lang === "Python") Python
+                        each language in languages
+                            option(value=language.value, selected=lang === language.value)= language.name
                 div.my-3(style="width: 250px;")
                     button#submit-btn.w-100.btn.btn-success.btn-lg.p-2 Очистить код
                         i.fas.fa-bolt.float-end.pt-1

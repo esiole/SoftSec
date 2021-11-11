@@ -2,11 +2,12 @@ const express = require('express');
 const pug = require('pug');
 const fs = require('fs');
 const utils = require('./utils.js');
+const data = require('./data.json');
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", {languages: data.languages});
 });
 
 router.get("/help", (req, res) => {
@@ -19,8 +20,8 @@ router.post("/comments/clear", (req, res) => {
         lang
     } = req.body;
 
-    const resultCode = utils.clearComments(typeof code != 'undefined' ? code : "", lang)
-    res.render("index", {code: code, resultCode: resultCode, lang: lang});
+    const resultCode = utils.clearComments(typeof code != 'undefined' ? code : "", lang);
+    res.render("index", {code: code, resultCode: resultCode, lang: lang, languages: data.languages});
 });
 
 router.get("/report", (req, res) => {
@@ -33,6 +34,9 @@ router.post("/report", (req, res) => {
         email,
         problem
     } = req.body;
+
+    data.reports.push({name: name, email: email, problem: problem});
+    fs.writeFileSync('data.json', JSON.stringify(data));
 
     let template = fs.readFileSync('./views/thanks.pug', 'utf8');
     template = template.replace(/#{name}/g, name);

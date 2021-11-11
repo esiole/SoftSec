@@ -1,0 +1,19 @@
+{
+  "languages": [
+    {
+      "name": "JavaScript",
+      "value": "JS"
+    },
+    {
+      "name": "Python",
+      "value": "Py"
+    }
+  ],
+  "reports": [
+    {
+      "name": "Пример репорта об ошбике",
+      "email": "example@example.ru",
+      "problem": "Детальное описание ошибки"
+    }
+  ]
+}

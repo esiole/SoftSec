@@ -5,14 +5,14 @@ block content
         form.w-50.mx-auto.mt-5(method="POST")
             div.mb-3
                 label.form-label(for="name") Имя
-                input#name.form-control(name="name", required)
+                input#name.form-control.form-control-lg(name="name", required)
                 div.form-text Ваше имя
             div.mb-3
                 label.form-label(for="email") Email
-                input#email.form-control(name="email", type="email", required)
+                input#email.form-control.form-control-lg(name="email", type="email", required)
                 div.form-text На этот email Вам придёт ответ
             div.mb-3
                 label.form-label(for="problem") Ошибка
                 textarea#problem.form-control(name="problem", required)
                 div.form-text Детальное описание Ваших действий, которые привели к ошибке
-            button.btn.btn-primary(type="submit") Отправить
+            button.w-25.btn.btn-primary.btn-lg.p-2(type="submit") Отправить
