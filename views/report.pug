@@ -1,37 +1,18 @@
-html.h-100
-    head
-        link(rel="shortcut icon", href="/public/img/favicon.ico", type="image/x-icon")
-        meta(charset="utf-8")
-        link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css", integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC", crossorigin="anonymous")
-        title ClearComments
-    body.d-flex.flex-column.h-100
-        header.mb-5.pb-3
-            nav.navbar.navbar-dark.bg-dark.navbar-expand.border-bottom.fixed-top
-                div.container-fluid
-                    a.navbar-brand(href="/") ClearComments
-                    ul.navbar-nav.flex-grow-1
-                        li.nav-item
-                            a.nav-link(href="/help") Документация
-                        li.nav-item
-                            a.nav-link(href="/report") Сообщить об ошибке
-        main.flex-shrink-0.mb-3
-            div.container-fluid
-                div.w-75.mx-auto
-                    form.w-50.mx-auto.mt-5(method="POST")
-                        div.mb-3
-                            label.form-label(for="name") Имя
-                            input#name.form-control(name="name", required)
-                            div.form-text Ваше имя
-                        div.mb-3
-                            label.form-label(for="email") Email
-                            input#email.form-control(name="email", type="email", required)
-                            div.form-text На этот email Вам придёт ответ
-                        div.mb-3
-                            label.form-label(for="problem") Ошибка
-                            textarea#problem.form-control(name="problem", required)
-                            div.form-text Детальное описание Ваших действий, которые привели к ошибке
-                        button.btn.btn-primary(type="submit") Отправить
+extends layout
 
-        footer.footer.mt-auto.py-3.bg-light
-            div.container.text-center &copy; 2021 - Есиков Олег
-        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM", crossorigin="anonymous")
+block content
+    div.w-75.mx-auto
+        form.w-50.mx-auto.mt-5(method="POST")
+            div.mb-3
+                label.form-label(for="name") Имя
+                input#name.form-control(name="name", required)
+                div.form-text Ваше имя
+            div.mb-3
+                label.form-label(for="email") Email
+                input#email.form-control(name="email", type="email", required)
+                div.form-text На этот email Вам придёт ответ
+            div.mb-3
+                label.form-label(for="problem") Ошибка
+                textarea#problem.form-control(name="problem", required)
+                div.form-text Детальное описание Ваших действий, которые привели к ошибке
+            button.btn.btn-primary(type="submit") Отправить
