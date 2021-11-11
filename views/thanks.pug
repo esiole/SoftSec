@@ -14,11 +14,17 @@ html.h-100
                             a.nav-link(href="/help") Документация
                         li.nav-item
                             a.nav-link(href="/report") Сообщить об ошибке
-        main.flex-shrink-0.mb-3
+        main.flex-shrink-0.mb-4
             div.container-fluid
-                div.w-75.mx-auto
-                    div Спасибо за сообщение об ошибке, #{name}!
-                    div Мы проинформируем Вас по email, когда решим проблему!
+                div.w-50.mx-auto.text-center
+                    div.mb-5
+                    div.bg-light.border.border-secondary.border-2.rounded.p-3
+                        h3.mb-3 Спасибо за сообщение об ошибке, #{name}!
+                        h5.mb-3 Мы проинформируем Вас по email, когда решим проблему!
+                        hr
+                        div.w-75.mx-auto
+                            h6.text-start С уважением,
+                            h6.text-start Команда разработки ClearComments
 
         footer.footer.mt-auto.py-3.bg-light
             div.container.text-center &copy; 2021 - Есиков Олег

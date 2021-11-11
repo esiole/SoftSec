@@ -36,7 +36,7 @@ router.post("/report", (req, res) => {
     } = req.body;
 
     data.reports.push({name: name, email: email, problem: problem});
-    fs.writeFileSync('data.json', JSON.stringify(data));
+    fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
     let template = fs.readFileSync('./views/thanks.pug', 'utf8');
     template = template.replace(/#{name}/g, name);
