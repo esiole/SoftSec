@@ -1,13 +1,15 @@
 extends layout
 
 block content
-    div.w-75.mx-auto
+    div.w-75.mx-auto.pt-3
         h4 Шаг 1: Скопируйте исходный код в поле слева.
         p Пример:
-        code int x = 100;
+            pre.bg-light.border.border-secondary.border-2.rounded.p-2
+                code= before
         h4 Шаг 2: Нажмите кнопку "Очистить код", чтобы начать обработку.
         p Нажмите кнопку "Очистить код", которая находится под полями ввода по середине и подождите несколько секунд.
         h4 Шаг 3: Скопируйте код без комментариев из правого поля.
         p Это ответ на запрос, который мы сделали ранее в шаге №1:
-        code int x = 100;
+            pre.bg-light.border.border-secondary.border-2.rounded.p-2
+                code= after
         h4 Шаг 4: Вставьте код в свою любимую IDE и используйте его!

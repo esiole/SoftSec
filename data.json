@@ -9,6 +9,10 @@
       "value": "Py"
     }
   ],
+  "examples": {
+    "before": "const foo1 = () => { \n//...\n}\n\n// можно даже в одну строку\nconst foo2 = () => doSomething()\n\n// с передачей параметра\nconst foo3 = param => doSomething(param)\n\n// неявный возврат значения\nconst foo4 = param => param * 2\nfoo4(5) // 10",
+    "after": "const foo1 = () => { \n     \n}\n\n                          \nconst foo2 = () => doSomething()\n\n                        \nconst foo3 = param => doSomething(param)\n\n                           \nconst foo4 = param => param * 2\nfoo4(5)      "
+  },
   "reports": [
     {
       "name": "Пример репорта об ошбике",

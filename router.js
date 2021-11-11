@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/help", (req, res) => {
-    res.render("help");
+    res.render("help", {before: data.examples.before, after: data.examples.after});
 });
 
 router.post("/comments/clear", (req, res) => {
