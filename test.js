@@ -1,7 +1,6 @@
 const fetch = require("node-fetch");
 
-// ПРИ НЕОБХОДИМОСТИ ПОМЕНЯТЬ HOST И PORT
-const url = "http://localhost:3000/report";
+const url = "http://localhost:3000/report"; // ПРИ НЕОБХОДИМОСТИ ПОМЕНЯТЬ HOST И PORT
 const vulnerabilityData = {
     name: "#{5572*210}",
     email: "test@test.com",
