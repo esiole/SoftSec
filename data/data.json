@@ -2,11 +2,23 @@
   "languages": [
     {
       "name": "JavaScript",
-      "value": "JS"
+      "value": "js"
     },
     {
       "name": "Python",
-      "value": "Py"
+      "value": "py"
+    },
+    {
+      "name": "C#",
+      "value": "cs"
+    },
+    {
+      "name": "Java",
+      "value": "java"
+    },
+    {
+      "name": "XML",
+      "value": "xml"
     }
   ],
   "examples": {

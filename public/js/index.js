@@ -6,6 +6,7 @@ const COPY_BUTTON = document.getElementById("copy-btn")
 SUBMIT_BUTTON.addEventListener("click", onSubmitCode);
 COPY_BUTTON.addEventListener("click", onCopyButtonClick);
 CODE_ELEMENT.addEventListener("input", onInputCode);
+CODE_ELEMENT.addEventListener('keydown', onCodeKeyDown)
 RESULT_CODE_ELEMENT.addEventListener("input", onInputCode);
 CODE_ELEMENT.dispatchEvent(new Event("input"));
 RESULT_CODE_ELEMENT.dispatchEvent(new Event("input"));
@@ -44,4 +45,14 @@ function onCopyButtonClick(event) {
     const oldButtonValue = event.target.innerHTML;
     event.target.innerHTML = "Скопировано!";
     setTimeout(() => event.target.innerHTML = oldButtonValue, 2500);
+}
+
+function onCodeKeyDown(event) {
+    if (event.key === 'Tab') {
+        event.preventDefault();
+        const start = this.selectionStart;
+        const end = this.selectionEnd;
+        this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+        this.selectionStart = this.selectionEnd = start + 1;
+    }
 }
