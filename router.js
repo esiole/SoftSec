@@ -39,9 +39,7 @@ router.post("/report", (req, res) => {
     fs.writeFileSync('./data/data.json', JSON.stringify(data, null, 2));
 
     let template = fs.readFileSync('./views/thanks.pug', 'utf8');
-    template = template.replace(/#{name}/g, name);
-
-    let html = pug.render(template);
+    let html = pug.render(template, {name: name});
     res.set('Content-Type', 'text/html');
     res.send(html);
 });
